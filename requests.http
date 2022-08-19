@@ -1,0 +1,10 @@
+### user create action 
+POST http://localhost:3000/users 
+Contect-type: application/json
+
+{
+  "name": "Piper Halliwell",
+  "email": "piper@test.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
