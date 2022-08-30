@@ -1,6 +1,6 @@
 ### user create action 
 POST http://localhost:3000/users 
-Contect-type: application/json
+Content-Type: application/json
 
 {
   "name": "Piper Halliwell",
@@ -8,3 +8,4 @@ Contect-type: application/json
   "password": "password",
   "password_confirmation": "password"
 }
+
