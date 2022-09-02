@@ -1,3 +1,5 @@
 class Garment < ApplicationRecord
-  validates :name 
-end
+  validates :name, presence: true
+
+  belongs_to :user
+end 

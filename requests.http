@@ -1,3 +1,5 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjE5OTIxNzZ9.CSAk4zhynUL6uGQAEIzwJUpZpI4J0ApWmrBIx2EXQrM
+
 ### user create action 
 POST http://localhost:3000/users 
 Content-Type: application/json
@@ -18,3 +20,28 @@ Content-Type: application/json
   "email": "piper@test.com",
   "password": "password"
 }
+
+
+### garment create request 
+POST http://localhost:3000/garments.json
+Authorization: Bearer {{ jwt }}
+Content-Type: application/json
+
+{
+  "name": "denim shorts",
+  "color_id": 2,
+  "category_id": 2,
+  "image": "https://www.net-a-porter.com/variants/images/46376663162666993/in/w1365_q60.jpg"
+}
+
+
+### garments index action
+GET http://localhost:3000/garments.json
+
+
+### garments show action
+GET http://localhost:3000/garments/1.json
+
+
+### garment delete action
+DELETE http://localhost:3000/garments/1

@@ -10,6 +10,12 @@ Rails.application.routes.draw do
   # sessions
   post "/sessions" => "sessions#create"
 
+  #garments
+  get "/garments" => "garments#index"
+  get "/garments/:id" => "garments#show"
+  post "/garments" => "garments#create"
+  delete "/garments/:id" => "garments#destroy"
+
 
 
 end
