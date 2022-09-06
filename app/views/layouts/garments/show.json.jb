@@ -1,0 +1,10 @@
+{
+    id: garment.id,
+    name: garment.name,
+    color_id: garment.color_id,
+    category_id: garment.category_id,
+    user_id: garment.user_id,
+    image: garment.image,
+    created_at: garment.created_at,
+    updated_at: garment.updated_at,
+  }

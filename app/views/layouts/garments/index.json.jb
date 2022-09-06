@@ -1,0 +1,10 @@
+@garments.map do |garment|
+  {
+    id: garment.id,
+    name: garment.name,
+    color_id: garment.color_id,
+    category_id: garment.category_id,
+    user_id: garment.user_id,
+    image: garment.image,
+  }
+end

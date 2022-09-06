@@ -9,26 +9,30 @@ class GarmentsController < ApplicationController
     end
 
     @garments = @garments.order(:id => :desc)
-
-    render template: "garments/index"
+    @colors = Color.all
+    @categories = Category.all
+    render json: {garments: @garments, colors: @colors, categories: @categories}
   end
 
   def show
     @garment = Garment.find(params[:id])
-    render template: "garments/show"
+    render json: @garment.as_json
   end
 
 
   def create
+    response = Cloudinary::Uploader.upload(params[:image_file], resource_type: :auto)
+    cloudinary_url = response["secure_url"]
+    pp cloudinary_url
     @garment = Garment.new(
       name: params[:name],
       color_id: params[:color_id],
       category_id: params[:category_id],
-      image: params[:image],
+      image: cloudinary_url,
       user_id: current_user.id
     )
     if @garment.save
-      render template: "garments/show"
+      render json: @garment.as_json
     else
       render json: {errors: @garment.errors.full_messages }, status: :unprocessable_entity 
     end 
