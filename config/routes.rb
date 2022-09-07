@@ -16,6 +16,12 @@ Rails.application.routes.draw do
   post "/garments" => "garments#create"
   delete "/garments/:id" => "garments#destroy"
 
+  #colors
+  post "/colors" => "colors#create"
+  delete "/colors/:id" => "colors#destroy"
 
+  #categories
+  post "/categories" => "categories#create"
+  delete "/categories/:id" => "categories#destroy"
 
 end

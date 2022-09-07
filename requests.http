@@ -45,3 +45,30 @@ GET http://localhost:3000/garments/1.json
 
 ### garment delete action
 DELETE http://localhost:3000/garments/1
+
+
+### color create 
+POST http://localhost:3000/colors.json 
+Content-Type: application/json
+
+{
+  "name": "new white"
+}
+
+
+### color destroy
+DELETE http://localhost:3000/colors/3
+
+
+### category create 
+POST http://localhost:3000/categories.json
+Content-Type: application/json
+
+{
+  "name": ""
+}
+
+
+### category destroy
+DELETE http://localhost:3000/categories/1
+  

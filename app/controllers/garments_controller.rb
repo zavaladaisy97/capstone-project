@@ -21,14 +21,17 @@ class GarmentsController < ApplicationController
 
 
   def create
-    response = Cloudinary::Uploader.upload(params[:image_file], resource_type: :auto)
-    cloudinary_url = response["secure_url"]
-    pp cloudinary_url
+    if params[:image] != ""
+      image_url = params[:image]
+    else
+      response = Cloudinary::Uploader.upload(params[:image_file], resource_type: :auto)
+      image_url = response["secure_url"]
+    end
     @garment = Garment.new(
       name: params[:name],
       color_id: params[:color_id],
       category_id: params[:category_id],
-      image: cloudinary_url,
+      image: image_url,
       user_id: current_user.id
     )
     if @garment.save
